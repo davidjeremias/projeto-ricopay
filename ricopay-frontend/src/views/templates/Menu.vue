@@ -90,7 +90,7 @@
         drawer: true,
         dialog: false,
       items: [
-        { icon: 'mdi-plus-circle', text: 'Cadastro de Empresa', nameRota: 'CadastroEmpresa' },
+        { icon: 'mdi-plus-circle', text: 'Cadastro de Logista', nameRota: 'CadastroEmpresa' },
         { icon: 'mdi-account-plus', text: 'Cadastro de Operador', nameRota: 'CadastroOperador'},
         { icon: 'mdi-credit-card-plus', text: 'Efetuar Vendas', nameRota: 'EfetuarVenda' },
         { icon: 'mdi-credit-card-outline', text: 'Consultar Vendas', nameRota: 'ConsultarVenda' },

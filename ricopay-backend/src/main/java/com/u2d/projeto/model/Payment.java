@@ -1,6 +1,6 @@
 package com.u2d.projeto.model;
 
-import java.io.Serializable;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,40 +18,38 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Builder
 @Entity
-@Table(name = "TB001_ENDERECO")
-public class Endereco implements Serializable{
+@Table(name = "TB011_PAGAMENTO")
+public class Payment {
 
-	private static final long serialVersionUID = 166308449528778915L;
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "CO_ENDERECO")
 	@EqualsAndHashCode.Include
+	@Column(name = "CO_PAGAMENTO")
 	private Long id;
-
-	@Column(name = "CO_CEP")
-	private String cep;
-
-	@Column(name = "NO_LOGRADOURO")
-	private String logradouro;
-
-	@Column(name = "NO_COMPLEMENTO")
-	private String complemento;
-
-	@Column(name = "NO_BAIRRO")
-	private String bairro;
-
-	@Column(name = "NO_CIDADE")
-	private String localidade;
-
-	@Column(name = "NO_UF")
-	private String uf;
-
-	@Column(name = "CO_IBGE")
-	private String ibge;
+	
+	@Column(name = "DE_STATUS")
+	private String status;
+	
+	@Column(name = "NU_NIT")
+	private String nit;
+	
+	@Column(name = "CO_ORDEM")
+	private String orderId;
+	
+	@Column(name = "CO_MERCHANTUSN")
+	private Long merchantUsn;
+	
+	@Column(name = "VL_VALOR")
+	private Integer amount;
+	
+	@Column(name = "CO_AUTORIZADORA")
+	private String authorizerCode;
+	
+	@Column(name = "DT_PAGAMENTO")
+	private LocalDateTime dataHoraPayment;
 }

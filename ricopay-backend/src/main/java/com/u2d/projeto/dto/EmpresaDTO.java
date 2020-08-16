@@ -1,15 +1,20 @@
 package com.u2d.projeto.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.u2d.projeto.model.Contato;
-import com.u2d.projeto.model.Endereco;
-import lombok.*;
+import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
-import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -52,6 +57,8 @@ public class EmpresaDTO implements Serializable {
     private String porte;
 
     private String status;
+    
+    private String cep;
 
     private EnderecoDTO enderecoDTO;
 

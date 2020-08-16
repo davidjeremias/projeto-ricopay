@@ -59,11 +59,15 @@ public class UsuarioService {
     
     public UsuarioDTO findByCpf(String cpf) {
     	Optional<Usuario> user = repository.findByCpf(cpf);
+    	UsuarioDTO retorno = null;
     	if(user.isPresent()) {
-    		user.get().setEmpresa(null);
-    		user.get().setSenha(null);
+    		retorno = modelMapper.map(user.get(), UsuarioDTO.class);
+    		if(user.get().getEmpresa() != null) {
+    			retorno.setIdEmpresa(user.get().getId());
+        		retorno.setEmpresa(null);
+    		}
+    		retorno.setSenha(null);
     	}
-    	return modelMapper.map(user.get(), UsuarioDTO.class);
-    	
+    	return retorno;
     }
 }
